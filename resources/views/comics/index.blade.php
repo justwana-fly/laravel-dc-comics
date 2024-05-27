@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<main>
     <div class="container">
         <h1>Comics List</h1>
         <div class="row">
@@ -17,4 +18,5 @@
             @endforeach
         </div>
     </div>
+    </main>
 @endsection

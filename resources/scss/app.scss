@@ -8,7 +8,40 @@ $fa-font-path: "../webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 @import '~bootstrap/scss/bootstrap';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
 
-h1 {
-    color: $text-color;
+body{
+    background-color: #1C1C1C;
+}
+
+.jumbotron {
+    background-image: url("https://github.com/justwana-fly/vite-comics/blob/main/public/images/jumbotron.jpg?raw=true");
+    background-size: cover; /* Imposta la dimensione dell'immagine in modo che copra l'intera area del background */
+    background-position: center; /* Centra l'immagine orizzontalmente e verticalmente */
+    height: 100vh; /* Imposta l'altezza del header al 100% dell'altezza della finestra visualizzata */
+    width: 100%; /* Imposta la larghezza del header al 100% */
+}
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+li:hover{
+    color: aqua;
+    cursor: pointer;
+
+}
+.nav-bar{
+    background-color: white;
+}
+main{
+    background-color: #1C1C1C;
 }

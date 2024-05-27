@@ -1,3 +1,4 @@
+
 <div class="card">
     <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
     <div class="card-body">
