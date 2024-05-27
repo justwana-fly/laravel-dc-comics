@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- Route::get('/comics', 'App\Http\Controllers\ComicController@index')->name('comics.index');
+ Route::get('/', 'App\Http\Controllers\ComicController@index')->name('comics.index');
  Route::get('/comics/create', 'App\Http\Controllers\ComicController@create')->name('comics.create');
  Route::post('/comics', 'App\Http\Controllers\ComicController@store')->name('comics.store');
  Route::get('/comics/{comic}', 'App\Http\Controllers\ComicController@show')->name('comics.show');
