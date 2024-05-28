@@ -7,6 +7,7 @@
         <h1>Add New Comic</h1>
         <form method="POST" action="{{ route('comics.store') }}">
             @csrf
+            
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" required>
