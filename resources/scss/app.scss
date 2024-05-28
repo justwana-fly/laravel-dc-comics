@@ -21,10 +21,12 @@ body{
 
 .jumbotron {
     background-image: url("https://github.com/justwana-fly/vite-comics/blob/main/public/images/jumbotron.jpg?raw=true");
-    background-size: cover; /* Imposta la dimensione dell'immagine in modo che copra l'intera area del background */
-    background-position: center; /* Centra l'immagine orizzontalmente e verticalmente */
-    height: 100vh; /* Imposta l'altezza del header al 100% dell'altezza della finestra visualizzata */
-    width: 100%; /* Imposta la larghezza del header al 100% */
+    background-size: cover; 
+    background-position: center; 
+    height: 450px; 
+    width: 100%; 
+    background-position: top center; 
+    
 }
 li {
     list-style: none;
@@ -45,3 +47,40 @@ li:hover{
 main{
     background-color: #1C1C1C;
 }
+
+
+h1{
+    color: white;
+}
+label{
+    color: white;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+}
+
+.card-body {
+    flex-grow: 1;
+    background-color: #1C1C1C;
+}
+
+.card img {
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+.card .btn {
+    margin-top: auto; 
+}
+

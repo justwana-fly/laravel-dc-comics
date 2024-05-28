@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Http\Request;
+
 
 class ComicController extends Controller
 {
@@ -39,13 +40,19 @@ class ComicController extends Controller
             'sale_date' => 'nullable|date',
             'type' => 'nullable|string|max:50',
         ]);
-
-        // Creiamo un nuovo fumetto con i dati validati
-        $comic = Comic::create($validatedData);
-
-        // Reindirizziamo l'utente alla pagina di index dei fumetti
-        return redirect()->route('comics.index');
+    
+        try {
+            // Creiamo un nuovo fumetto con i dati validati
+            $comic = Comic::create($validatedData);
+    
+            // Reindirizziamo l'utente alla pagina di index dei fumetti con un messaggio di successo
+            return redirect()->route('comics.index')->with('success', 'Comic created successfully.');
+        } catch (\Exception $e) {
+            // Gestione delle eccezioni
+            return redirect()->route('comics.index')->with('error', 'Failed to create comic. Please try again.');
+        }
     }
+    
 
     public function show(Comic $comic)
     {
@@ -74,9 +81,19 @@ class ComicController extends Controller
         return redirect()->route('comics.index');
     }
 
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
-        $comic->delete();
-        return redirect()->route('comics.index');
+        try {
+            // Trova il fumetto tramite ID e cancellalo
+            $comic = Comic::findOrFail($id);
+            $comic->delete();
+    
+            // Reindirizza con un messaggio di successo
+            return redirect()->route('comics.index')->with('success', 'Comic deleted successfully.');
+        } catch (\Exception $e) {
+            // Gestione degli errori
+            return redirect()->route('comics.index')->with('error', 'Failed to delete comic. Please try again.');
+        }
     }
+
 }
